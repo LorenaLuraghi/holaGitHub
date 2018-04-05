@@ -1,0 +1,42 @@
+---
+title: "Actividad 5, RMarkdown en grupo"
+author: "Lorena Luraghi-Carolina Rodriguez"
+date: "2 de abril de 2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+##Incluir imagen
+
+Elegimos esta imagen porque resulta util para aprender a usar RMarkdown
+
+ 
+![](fe3db1f8dbdcedb0d2ec840db0d72f26.jpg)
+
+
+
+
+## Chunck con codigo de R 
+
+```{r, echo=TRUE,fig.width=5,fig.height=5}
+library(ggplot2)
+data(mpg)
+ggplot(data=mpg, aes(x=hwy, y=cty))+
+  geom_point()+
+  labs(x="highway miles per gallon", 
+       y="city miles per gallon", title="city vs highway")
+```
+
+## Incluir una tabla
+
+```{r, echo=TRUE, results="asis", message=FALSE}
+library(xtable)
+xtable(mpg[1:5,1:5])
+```
+
+
+
